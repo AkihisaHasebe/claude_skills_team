@@ -31,13 +31,21 @@ Claude Code で、**マネージャー・作業者・レビュー役の3役**で
 
 ## インストール
 
+Windows（PowerShell）:
 ```powershell
-git clone <このリポジトリのURL>
-cd claude-team-pack
+git clone https://github.com/AkihisaHasebe/claude_skills_team.git
+cd claude_skills_team
 powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
-`~/.claude/skills/team/` と `~/.claude/agents/` にコピーします。既存のファイルは `~/.claude/backups/team-<日時>/` に退避します。
+Linux / macOS:
+```bash
+git clone https://github.com/AkihisaHasebe/claude_skills_team.git
+cd claude_skills_team
+bash install.sh
+```
+
+どちらも `~/.claude/skills/team/` と `~/.claude/agents/` にコピーします。既存のファイルは `~/.claude/backups/team-<日時>/` に退避します。
 特定のプロジェクトだけで使う場合は、3ファイルを `<プロジェクト>/.claude/skills/team/` と `<プロジェクト>/.claude/agents/` に手で置いてください。
 
 条件:
@@ -53,6 +61,7 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 ```
 
 管理者エージェント（タスク管理表を回すメインセッション）が使う場合は、`/team` を呼べません（`disable-model-invocation: true`）。管理者の `CLAUDE.md` に [manager-snippet.md](manager-snippet.md) の文面を追記し、管理者に手順を直接実行させます。管理者がサブエージェントだと、さらにサブエージェントを呼べないので、管理者はメインセッションにしてください。
+計画も担当に任せ、管理者を依頼の確認と進行に専念させたい場合は、[manager-5roles.md](manager-5roles.md)（5役の版、未検証）を使います。
 
 インストール後の確認:
 1. `/team` と打って、補完候補に出るか確認する。

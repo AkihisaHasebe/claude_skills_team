@@ -1,0 +1,2 @@
+# install.sh must keep LF line endings, or bash on Linux / macOS fails to run it.
+*.sh text eol=lf
